@@ -31,19 +31,19 @@ routes.post('/classes', async (req, res)=>{
             bio
         });
     
-        const user_Id = insertedUsersId[0];
+        const user_id = insertedUsersId[0];
     
         const insertedClassesId = await trx('classes').insert({
             subject,
             cost,
-            user_Id
+            user_id
         });
     
-        const class_Id = insertedClassesId[0];
+        const class_id = insertedClassesId[0];
     
         const classSchedule = schedule.map((scheduleItem: ScheduleItem) =>{
             return {
-                class_Id,
+                class_id,
                 weekday: scheduleItem.weekday,
                 from: convertHoursToMinutes(scheduleItem.from),
                 to: convertHoursToMinutes(scheduleItem.to)
