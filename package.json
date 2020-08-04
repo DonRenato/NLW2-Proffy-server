@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts":{
+    "start": "tsnd src/server.ts"
+  },
   "devDependencies": {
+    "ts-node-dev": "^1.0.0-pre.56",
     "typescript": "^3.9.7"
   }
+
 }
